@@ -1,2 +1,2 @@
-include ':app', ':tkbtoastlibrary'
+include ':app', ':tkbtoastlibrary', ':dialoglibrary'
 rootProject.name='MyFirstOpenDemo'
