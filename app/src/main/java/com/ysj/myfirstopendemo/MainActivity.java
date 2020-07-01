@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        showDialog();
+
         testDialog = findViewById(R.id.test_dialog_library);
         testMerge = findViewById(R.id.test_merge_library);
 
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         testDialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                showDialog();
             }
         });
 
