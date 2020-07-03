@@ -1,11 +1,16 @@
 package com.ysj.myfirstopendemo;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.OnLifecycleEvent;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -25,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private Button testDialog;
     private Button testMerge;
     private Button testLifeCycle;
+    private Button testCall;
 
     private static final String TAG = "MainActivity";
     @Override
@@ -37,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         testDialog = findViewById(R.id.test_dialog_library);
         testMerge = findViewById(R.id.test_merge_library);
         testLifeCycle = findViewById(R.id.test_lifecycle);
+        testCall = findViewById(R.id.test_call);
 
         //测试DialogLibrary
         testDialog.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +71,47 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //测试打电话不同android版本权限
+        testCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                callPhone();//Android6.0以前拨打电话
+                newCall();//Android6.0以前拨打电话
+            }
+        });
+    }
+
+    private void newCall() {
+        //检测是否具有权限
+      if(ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE)
+      != PackageManager.PERMISSION_GRANTED){
+          //没有授予权限，去申请
+          ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.CALL_PHONE},1000);
+      }else {
+          callPhone();
+      }
+
+    }
+
+    private void callPhone() {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_CALL);
+        intent.setData(Uri.parse("tel:1008611"));
+        startActivity(intent);
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(requestCode == 1000){
+            //检测用户授权结果
+            if(grantResults[0]==PackageManager.PERMISSION_GRANTED){
+                callPhone();
+            }else{
+                Toast.makeText(this,"权限被拒绝",Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     private void showDialog() {
