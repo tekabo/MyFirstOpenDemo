@@ -29,4 +29,6 @@ dependencies {
     implementation project(path: ':tkbtoastlibrary')
     implementation project(path: ':dialoglibrary')
     implementation project(path: ':mergeadapterlibrary')
+
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0-alpha1'
 }
