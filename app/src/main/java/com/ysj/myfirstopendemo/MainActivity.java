@@ -19,6 +19,8 @@ import android.widget.Toast;
 
 import com.ysj.dialoglibrary.ProtocolDialog;
 import com.ysj.dialoglibrary.WebUrlActivity;
+
+import com.ysj.listrefreshlibrary.RefreshActivity;
 import com.ysj.mergeadapterlibrary.TestMergeActivity;
 
 /**
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private Button testMerge;
     private Button testLifeCycle;
     private Button testCall;
+    private Button refreshList;
 
     private static final String TAG = "MainActivity";
     @Override
@@ -44,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         testMerge = findViewById(R.id.test_merge_library);
         testLifeCycle = findViewById(R.id.test_lifecycle);
         testCall = findViewById(R.id.test_call);
+        refreshList = findViewById(R.id.refresh_list);
 
         //测试DialogLibrary
         testDialog.setOnClickListener(new View.OnClickListener() {
@@ -77,6 +81,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 //                callPhone();//Android6.0以前拨打电话
                 newCall();//Android6.0以前拨打电话
+            }
+        });
+
+        //测试上拉刷新下拉加载
+        refreshList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RefreshActivity.startMyActivity(MainActivity.this);
             }
         });
     }
