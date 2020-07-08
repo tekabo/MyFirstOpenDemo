@@ -4,12 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.scwang.smart.refresh.layout.SmartRefreshLayout;
 
@@ -25,6 +27,9 @@ public class RefreshActivity extends AppCompatActivity {
     private List<NewsInfoBean> falseData;
 
     private NewsAdapter newsAdapter;
+    private LottieAnimationView lottieAnimation;
+    private Button testAni;
+    private boolean isOpen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +37,22 @@ public class RefreshActivity extends AppCompatActivity {
         setContentView(R.layout.activity_refresh);
         rv = findViewById(R.id.rv);
         sf = findViewById(R.id.srf_news);
+        testAni = findViewById(R.id.testAni);
+        lottieAnimation = findViewById(R.id.loading_lottie);
+        testAni.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isOpen = !isOpen;
+                if (isOpen){
+                    lottieAnimation.playAnimation();
+                }else {
+                    lottieAnimation.cancelAnimation();
+                }
+            }
+        });
+
+
+
         falseData = new ArrayList<>();
         initData();
 

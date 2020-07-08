@@ -1,0 +1,18 @@
+[
+  {
+    "menuType": "1",
+    "menuTypeName": "大荤"
+  },
+  {
+    "menuType": "2",
+    "menuTypeName": "小荤"
+  },
+  {
+    "menuType": "3",
+    "menuTypeName": "素菜"
+  },
+  {
+    "menuType": "4",
+    "menuTypeName": "小吃"
+  }
+]

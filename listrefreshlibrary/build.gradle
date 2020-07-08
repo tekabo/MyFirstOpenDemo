@@ -40,4 +40,9 @@ dependencies {
     api 'com.scwang.smart:refresh-header-two-level:2.0.0'   //二级刷新头
     //adapter
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
+
+    //动画
+    api 'com.airbnb.android:lottie:3.3.0'
+
+    implementation 'com.github.florent37:viewanimator:1.0.5'
 }
