@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical">
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loading_lottie"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        app:lottie_fileName="loading_uc.json"
+        app:lottie_loop="true"/>
+    <TextView
+        android:id="@+id/tv_success"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:background="@drawable/shape_refresh_success"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="已为您刷新信息"
+        android:textColor="#969696"
+        android:textSize="12sp"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/tv_fail"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:background="@drawable/shape_refresh_fail"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="网络连接失败"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        android:visibility="gone"/>
+
+</LinearLayout>
