@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OkhttpActivity">
+    <Button
+        android:id="@+id/get_syn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发送get请求-同步"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/get_asy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发送get请求-异步"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/get_syn" />
+
+    <Button
+        android:id="@+id/post_syn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发送post请求-同步"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/get_asy" />
+
+    <Button
+        android:id="@+id/post_asy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发送post请求-异步"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/post_syn" />
+
+    <Button
+        android:id="@+id/btn_post_keyvalue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发送post请求—okio—提交键值对"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/post_asy" />
+
+    <Button
+        android:id="@+id/btn_post_string"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发送post请求—okio—提交字符串"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_post_keyvalue" />
+    <Button
+        android:id="@+id/btn_post_file"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发送post请求—okio—提交文件"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_post_string" />
+    <Button
+        android:id="@+id/btn_post_form"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发送post请求—okio—提交表单"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_post_file" />
+</androidx.constraintlayout.widget.ConstraintLayout>
