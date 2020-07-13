@@ -19,7 +19,6 @@ import androidx.lifecycle.OnLifecycleEvent;
 
 import com.ysj.dialoglibrary.ProtocolDialog;
 import com.ysj.dialoglibrary.WebUrlActivity;
-import com.ysj.listrefreshlibrary.MyRefreshHeader;
 import com.ysj.listrefreshlibrary.RefreshActivity;
 import com.ysj.mergeadapterlibrary.TestMergeActivity;
 
@@ -46,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     @BindView(R.id.test_okhttp)
     Button testOkhttp;
+    @BindView(R.id.test_retrofit)
+    Button testRetrofit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,6 +104,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 OkhttpActivity.startMyActivity(MainActivity.this);
+            }
+        });
+        //测试retrofit
+        testRetrofit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RetrofitTestActivity.startMyActivity(MainActivity.this);
             }
         });
     }

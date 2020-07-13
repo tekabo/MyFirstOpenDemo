@@ -50,4 +50,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:4.6.0'
     //okio
     implementation 'com.squareup.okio:okio:1.11.0'
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.8.1'
+
 }
