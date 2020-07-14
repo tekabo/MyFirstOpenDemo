@@ -22,8 +22,8 @@ import com.ysj.dialoglibrary.WebUrlActivity;
 import com.ysj.listrefreshlibrary.RefreshActivity;
 import com.ysj.mergeadapterlibrary.TestMergeActivity;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * 在onCreate方法中添加MyObserver，那么MyObserver就可以观察到MainActivity的各个生命周期的变化
@@ -31,89 +31,61 @@ import butterknife.ButterKnife;
  * 默认实现了LifecycleOwner接口,MainActivity是被观察者
  */
 public class MainActivity extends AppCompatActivity {
-    @BindView(R.id.test_dialog_library)
-    Button testDialogLibrary;
-    @BindView(R.id.test_merge_library)
-    Button testMergeLibrary;
-    @BindView(R.id.test_lifecycle)
-    Button testLifecycle;
-    @BindView(R.id.test_call)
-    Button testCall;
-    @BindView(R.id.refresh_list)
-    Button refreshList;
 
     private static final String TAG = "MainActivity";
-    @BindView(R.id.test_okhttp)
-    Button testOkhttp;
-    @BindView(R.id.test_retrofit)
-    Button testRetrofit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-//        当Lifecycle的生命周期发生变化时，MyObserver就会观察到，或者说是感知到。MyObserver成为了一个Lifecycle的观察者
+        //当Lifecycle的生命周期发生变化时，MyObserver就会观察到，或者说是感知到。MyObserver成为了一个Lifecycle的观察者
         getLifecycle().addObserver(new MyObserver());
+    }
 
-        //测试DialogLibrary
-        testDialogLibrary.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    @OnClick({R.id.test_dialog_library,R.id.test_merge_library,R.id.test_lifecycle,R.id.test_call,R.id.refresh_list,
+            R.id.test_okhttp,R.id.test_retrofit,R.id.test_litepal})
+    public void onMyClickView(View view){
+        switch (view.getId()){
+            case R.id.test_dialog_library:
+                //测试DialogLibrary
                 showDialog();
-            }
-        });
-
-
-        //测试MergeAdapterLibrary
-        testMergeLibrary.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                break;
+            case R.id.test_merge_library:
+                //测试MergeAdapterLibrary
                 Intent intent = new Intent(MainActivity.this, TestMergeActivity.class);
                 startActivity(intent);
-            }
-        });
-
-        //测试生命周期
-        testLifecycle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                break;
+            case R.id.test_lifecycle:
+                //测试生命周期
                 LifeCycleTestActivity.startMyActivity(MainActivity.this);
-            }
-        });
-
-        //测试打电话不同android版本权限
-        testCall.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                callPhone();//Android6.0以前拨打电话
+                break;
+            case R.id.test_call:
+                //测试打电话不同android版本权限
+                //                callPhone();//Android6.0以前拨打电话
                 newCall();//Android6.0以前拨打电话
-            }
-        });
-
-        //测试上拉刷新下拉加载
-        refreshList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                break;
+            case R.id.refresh_list:
+                //测试上拉刷新下拉加载
                 RefreshActivity.startMyActivity(MainActivity.this);
-            }
-        });
-
-        //测试okhttp
-        testOkhttp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                break;
+            case R.id.test_okhttp:
+                //测试okhttp
                 OkhttpActivity.startMyActivity(MainActivity.this);
-            }
-        });
-        //测试retrofit
-        testRetrofit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                break;
+
+            case R.id.test_retrofit:
+                //测试retrofit
                 RetrofitTestActivity.startMyActivity(MainActivity.this);
-            }
-        });
+                break;
+            case R.id.test_litepal:
+                //测试Litepal
+                LitepalTestActivity.startMyActivity(MainActivity.this);
+                break;
+        }
     }
+
+
 
     private void newCall() {
         //检测是否具有权限

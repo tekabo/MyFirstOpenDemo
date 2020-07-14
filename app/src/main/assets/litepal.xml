@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <!--  数据库名  -->
+    <dbname value="ysj"/>
+
+    <!--  数据库版本号  -->
+    <version value="2"/>
+
+    <!--  指定映射模型  -->
+    <list>
+        <mapping class="com.ysj.myfirstopendemo.Book"/>
+        <mapping class="com.ysj.myfirstopendemo.Category"/>
+    </list>
+
+    <!--  指定文件的存储方式  -->
+    <!--  <storage value="external" />-->
+</litepal>

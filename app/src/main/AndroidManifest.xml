@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
+        android:name=".MyOwnApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,7 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".RetrofitTestActivity"></activity>
+        <activity android:name=".GreenDaoTestActivity"></activity>
+        <activity android:name=".LitepalTestActivity" />
+        <activity android:name=".RetrofitTestActivity" />
         <activity android:name=".OkhttpActivity" />
         <activity android:name=".LifeCycleTestActivity" />
         <activity android:name=".MainActivity">
