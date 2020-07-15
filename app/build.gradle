@@ -17,6 +17,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+//    配置grenndao闭包
+    greendao {
+        schemaVersion 1 //当前数据库版本
+        daoPackage 'com.ysj.myfirstopendemo'
+        targetGenDir 'src/main/java'
+    }
 
 // butterknife-2 Butterknife requires Java 8
     compileOptions {
@@ -56,4 +62,14 @@ dependencies {
     implementation 'org.litepal.android:java:3.0.0'
     //greendao
     implementation 'org.greenrobot:greendao:3.3.0' // add library
+    //加密数据库
+    implementation 'net.zetetic:android-database-sqlcipher:3.5.6'
+    //dagger
+    api 'com.google.dagger:dagger:2.27'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.27'
+    api 'com.google.dagger:dagger-android:2.27'
+    api 'com.google.dagger:dagger-android-support:2.27' // if you use the support libraries
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.27'
+
+
 }

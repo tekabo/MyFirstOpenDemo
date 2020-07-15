@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".GreenDaoTestActivity"></activity>
+        <activity android:name=".DaggerTestActivity"></activity>
+        <activity android:name=".GreenDaoTestActivity" />
         <activity android:name=".LitepalTestActivity" />
         <activity android:name=".RetrofitTestActivity" />
         <activity android:name=".OkhttpActivity" />

@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick({R.id.test_dialog_library,R.id.test_merge_library,R.id.test_lifecycle,R.id.test_call,R.id.refresh_list,
-            R.id.test_okhttp,R.id.test_retrofit,R.id.test_litepal})
+            R.id.test_okhttp,R.id.test_retrofit,R.id.test_litepal,R.id.test_greendao,R.id.test_Dagger})
     public void onMyClickView(View view){
         switch (view.getId()){
             case R.id.test_dialog_library:
@@ -81,6 +81,13 @@ public class MainActivity extends AppCompatActivity {
             case R.id.test_litepal:
                 //测试Litepal
                 LitepalTestActivity.startMyActivity(MainActivity.this);
+                break;
+            case R.id.test_greendao:
+                //测试greendao
+                GreenDaoTestActivity.startMyActivity(MainActivity.this);
+                break;
+            case R.id.test_Dagger:
+                DaggerTestActivity.startMyActivity(MainActivity.this);
                 break;
         }
     }
