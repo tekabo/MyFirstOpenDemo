@@ -32,7 +32,7 @@ import retrofit2.http.Query;
 public class RetrofitTestActivity extends AppCompatActivity {
     private static final String URL = "https://tcc.taobao.com/cc/json/";
     private static final String TAG = "RetrofitTestActivity";
-    private static final String LOCALURL = "http://10.0.2.2:8080/";
+    private static final String LOCALURL = "";//http://10.0.2.2:8080/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

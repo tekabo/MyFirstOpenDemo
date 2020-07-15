@@ -34,7 +34,7 @@ import okhttp3.Response;
  * 异步调用：回调函数是在子线程，我们不能在子线程更新UI，需要借助于runOnUiThread()方法或者Handler来处理
  */
 public class OkhttpActivity extends AppCompatActivity {
-    private static final String URLS = "http://10.0.2.2:8080/androidframelearn/";
+    private static final String URLS = "";//http://10.0.2.2:8080/androidframelearn/
     private static final String URL = "http://wwww.baidu.com";
     private static final String TAG = "OkhttpActivity";
 
