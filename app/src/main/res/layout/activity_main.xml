@@ -96,4 +96,13 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/test_greendao" />
+    <Button
+        android:id="@+id/test_page_slide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="页面滑动效果"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/test_Dagger" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,2 +1,2 @@
-include ':app', ':tkbtoastlibrary', ':dialoglibrary', ':mergeadapterlibrary', ':listrefreshlibrary'
+include ':app', ':tkbtoastlibrary', ':dialoglibrary', ':mergeadapterlibrary', ':listrefreshlibrary', ':pageslide'
 rootProject.name='MyFirstOpenDemo'
