@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,10 +21,17 @@ import com.ysj.dialoglibrary.ProtocolDialog;
 import com.ysj.dialoglibrary.WebUrlActivity;
 import com.ysj.listrefreshlibrary.RefreshActivity;
 import com.ysj.mergeadapterlibrary.TestMergeActivity;
+import com.ysj.pageslide.searchboxslide.SearchBoxSlideActivity;
 import com.ysj.pageslide.titleslide.TitleSildeTestActivity;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.ObservableEmitter;
+import io.reactivex.rxjava3.core.ObservableOnSubscribe;
+import io.reactivex.rxjava3.core.Observer;
+import io.reactivex.rxjava3.disposables.Disposable;
 
 /**
  * 在onCreate方法中添加MyObserver，那么MyObserver就可以观察到MainActivity的各个生命周期的变化
@@ -33,6 +41,10 @@ import butterknife.OnClick;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
+    @BindView(R.id.tv_test)
+    TextView tvTest;
+    private Observable observable;
+    private Observer observer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,13 +53,15 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         //当Lifecycle的生命周期发生变化时，MyObserver就会观察到，或者说是感知到。MyObserver成为了一个Lifecycle的观察者
         getLifecycle().addObserver(new MyObserver());
+
+        myRxJava();
     }
 
-    @OnClick({R.id.test_dialog_library,R.id.test_merge_library,R.id.test_lifecycle,R.id.test_call,R.id.refresh_list,
-            R.id.test_okhttp,R.id.test_retrofit,R.id.test_litepal,R.id.test_greendao,R.id.test_Dagger,
-            R.id.test_page_slide})
-    public void onMyClickView(View view){
-        switch (view.getId()){
+    @OnClick({R.id.test_dialog_library, R.id.test_merge_library, R.id.test_lifecycle, R.id.test_call, R.id.refresh_list,
+            R.id.test_okhttp, R.id.test_retrofit, R.id.test_litepal, R.id.test_greendao, R.id.test_Dagger,
+            R.id.test_title_slide, R.id.test_search_slide, R.id.test_rxjava,R.id.test_xutils})
+    public void onMyClickView(View view) {
+        switch (view.getId()) {
             case R.id.test_dialog_library:
                 //测试DialogLibrary
                 showDialog();
@@ -90,12 +104,62 @@ public class MainActivity extends AppCompatActivity {
             case R.id.test_Dagger:
                 DaggerTestActivity.startMyActivity(MainActivity.this);
                 break;
-            case R.id.test_page_slide:
+            case R.id.test_title_slide:
                 TitleSildeTestActivity.startMyActivity(MainActivity.this);
+                break;
+            case R.id.test_search_slide:
+                SearchBoxSlideActivity.startMyActivity(MainActivity.this);
+                break;
+            case R.id.test_xutils:
+                TestXutilsActivity.startMyActivity(MainActivity.this);
+                break;
+            case R.id.test_rxjava:
+                observable.subscribe(observer);
                 break;
         }
     }
 
+    private void myRxJava() {
+        //1.创建被观察者
+        observable = Observable.create(new ObservableOnSubscribe<String>() {
+        //2.实现回调方法subcribe()
+            @Override
+            public void subscribe(@io.reactivex.rxjava3.annotations.NonNull ObservableEmitter<String> emitter) throws Throwable {
+                //3.发送String类型消息
+                emitter.onNext("我要行动了");
+                //4.完成消息发送
+                emitter.onComplete();
+            }
+        });
+
+        //5.创建观察者
+        observer = new Observer<String>() {
+            //6.订阅后执行的方法
+            @Override
+            public void onSubscribe(@io.reactivex.rxjava3.annotations.NonNull Disposable d) {
+
+            }
+            //7.当被观察者执行onNext()的回调
+            @Override
+            public void onNext(@io.reactivex.rxjava3.annotations.NonNull String s) {
+                tvTest.setText(s);
+                Log.i(TAG,"收到消息啦");
+            }
+
+            //8.当被观察者执行onError()的回调
+            @Override
+            public void onError(@io.reactivex.rxjava3.annotations.NonNull Throwable e) {
+
+            }
+
+            //9.当被观察者执行onComplete()的回调
+            @Override
+            public void onComplete() {
+                Log.i(TAG,"消息接收已结束！");
+            }
+        };
+
+    }
 
 
     private void newCall() {

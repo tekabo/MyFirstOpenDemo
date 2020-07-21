@@ -72,5 +72,10 @@ dependencies {
     annotationProcessor 'com.google.dagger:dagger-android-processor:2.27'
     implementation project(path: ':pageslide')
 
+    //测试rxjava
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.0'
+    //测试xUtils
+    implementation 'org.xutils:xutils:3.8.8'
 
 }

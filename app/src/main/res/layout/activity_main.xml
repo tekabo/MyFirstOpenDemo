@@ -6,103 +6,122 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/test_dialog_library"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="测弹框"
-        android:layout_marginTop="@dimen/dp_10"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <Button
-        android:id="@+id/test_merge_library"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="测mergeAdapter"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/test_dialog_library" />
-    <Button
-        android:id="@+id/test_lifecycle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="测life周期"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/test_merge_library" />
-    <Button
-        android:id="@+id/test_call"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="测打电话权限"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/test_lifecycle" />
-    <Button
-        android:id="@+id/refresh_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="上拉刷新下拉加载"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/test_call" />
-    <Button
-        android:id="@+id/test_okhttp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="测okhttp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/refresh_list" />
-    <Button
-        android:id="@+id/test_retrofit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="测retrofit"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/test_okhttp" />
-    <Button
-        android:id="@+id/test_litepal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="测litepal"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/test_retrofit" />
-    <Button
-        android:id="@+id/test_greendao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="测greendao"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/test_litepal" />
-    <Button
-        android:id="@+id/test_Dagger"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="测试Dagger"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/test_greendao" />
-    <Button
-        android:id="@+id/test_page_slide"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="页面滑动效果"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/test_Dagger" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/test_dialog_library"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="测弹框" />
+
+            <Button
+                android:id="@+id/test_merge_library"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="测mergeAdapter" />
+
+            <Button
+                android:id="@+id/test_lifecycle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="测life周期" />
+
+            <Button
+                android:id="@+id/test_call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="测打电话权限" />
+
+            <Button
+                android:id="@+id/refresh_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="上拉刷新下拉加载" />
+
+            <Button
+                android:id="@+id/test_okhttp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="测okhttp" />
+
+            <Button
+                android:id="@+id/test_retrofit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="测retrofit" />
+
+            <Button
+                android:id="@+id/test_litepal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="测litepal" />
+
+            <Button
+                android:id="@+id/test_greendao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="测greendao" />
+
+            <Button
+                android:id="@+id/test_Dagger"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="测试Dagger" />
+
+            <Button
+                android:id="@+id/test_title_slide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="标题滑动" />
+
+            <Button
+                android:id="@+id/test_search_slide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="搜索框滑动" />
+            <Button
+                android:id="@+id/test_xutils"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="测试xUtils" />
+            <Button
+                android:id="@+id/test_rxjava"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="测试rxjava-开始订阅" />
+            <TextView
+                android:id="@+id/tv_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="测试文本"
+                android:textSize="30sp"/>
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

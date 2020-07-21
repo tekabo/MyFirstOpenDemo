@@ -6,6 +6,7 @@ import android.util.Log;
 
 import org.greenrobot.greendao.database.Database;
 import org.litepal.LitePal;
+import org.xutils.x;
 
 /**
  * Created by tekabo
@@ -27,6 +28,9 @@ public class MyOwnApplication extends Application {
         instances = this;
         //初始化GreenDao
         initDatabase();
+        //初始化xutils
+        x.Ext.init(this);
+        x.Ext.setDebug(BuildConfig.DEBUG);//是否输出debug日志，开启debug会影响性能
     }
 
     //初始化greenDAO
