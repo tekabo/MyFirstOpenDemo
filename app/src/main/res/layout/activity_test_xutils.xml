@@ -4,74 +4,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btn_test"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="测试按钮"/>
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btn_test2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="测试按钮2"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_test"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="测试文本" />
-    <Button
-        android:id="@+id/btn_get"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="测试get"/>
-    <Button
-        android:id="@+id/btn_post"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="测试post"/>
-    <Button
-        android:id="@+id/btn_cache"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="测试缓存"/>
-    <Button
-        android:id="@+id/btn_upload"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="测试上传文件"/>
-    <Button
-        android:id="@+id/btn_download"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="测试下载文件"/>
-    <ImageView
-        android:id="@+id/iv1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="图片1"/>
-    <ImageView
-        android:id="@+id/iv2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="图片2"/>
-    <ImageView
-        android:id="@+id/iv3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="图片3"/>
-    <ImageView
-        android:id="@+id/iv4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="图片4"/>
-    <ImageView
-        android:id="@+id/iv5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="图片5"/>
+            <Button
+                android:id="@+id/btn_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="测试按钮" />
+
+            <Button
+                android:id="@+id/btn_test2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="测试按钮2" />
+
+            <TextView
+                android:id="@+id/tv_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="测试文本" />
+
+            <Button
+                android:id="@+id/btn_get"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="测试get" />
+
+            <Button
+                android:id="@+id/btn_post"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="测试post" />
+
+            <Button
+                android:id="@+id/btn_cache"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="测试缓存" />
+
+            <Button
+                android:id="@+id/btn_upload"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="测试上传文件" />
+
+            <Button
+                android:id="@+id/btn_download"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="测试下载文件" />
+
+            <ImageView
+                android:id="@+id/iv1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="图片1" />
+
+            <ImageView
+                android:id="@+id/iv2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="图片2" />
+
+            <ImageView
+                android:id="@+id/iv3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="图片3" />
+
+            <ImageView
+                android:id="@+id/iv4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="图片4" />
+
+            <ImageView
+                android:id="@+id/iv5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="图片5" />
+
+            <Button
+                android:id="@+id/btn_db_operation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="操作数据库" />
+
+            <ListView
+                android:id="@+id/lv1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="数据库列表" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
