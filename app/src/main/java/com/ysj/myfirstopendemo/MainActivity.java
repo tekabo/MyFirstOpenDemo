@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick({R.id.test_dialog_library, R.id.test_merge_library, R.id.test_lifecycle, R.id.test_call, R.id.refresh_list,
             R.id.test_okhttp, R.id.test_retrofit, R.id.test_litepal, R.id.test_greendao, R.id.test_Dagger,
-            R.id.test_title_slide, R.id.test_search_slide, R.id.test_rxjava,R.id.test_xutils})
+            R.id.test_title_slide, R.id.test_search_slide, R.id.test_rxjava,R.id.test_xutils,R.id.tv_glide})
     public void onMyClickView(View view) {
         switch (view.getId()) {
             case R.id.test_dialog_library:
@@ -115,6 +115,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.test_rxjava:
                 observable.subscribe(observer);
+                break;
+            case R.id.tv_glide:
+                GlideAndFrescoTestActivity.startMyActivity(MainActivity.this);
                 break;
         }
     }

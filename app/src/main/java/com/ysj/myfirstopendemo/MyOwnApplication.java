@@ -4,6 +4,8 @@ import android.app.Application;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
+
 import org.greenrobot.greendao.database.Database;
 import org.litepal.LitePal;
 import org.xutils.x;
@@ -31,6 +33,9 @@ public class MyOwnApplication extends Application {
         //初始化xutils
         x.Ext.init(this);
         x.Ext.setDebug(BuildConfig.DEBUG);//是否输出debug日志，开启debug会影响性能
+
+        //初始化Fresco
+        Fresco.initialize(this);
     }
 
     //初始化greenDAO

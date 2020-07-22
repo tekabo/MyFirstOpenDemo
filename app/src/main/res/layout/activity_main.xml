@@ -122,6 +122,12 @@
                 android:layout_height="wrap_content"
                 android:text="测试文本"
                 android:textSize="30sp"/>
+            <Button
+                android:id="@+id/tv_glide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="测试glide"
+                android:textSize="30sp"/>
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -77,5 +77,11 @@ dependencies {
     implementation 'io.reactivex.rxjava3:rxjava:3.0.0'
     //测试xUtils
     implementation 'org.xutils:xutils:3.8.8'
+    //测试glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    //测试Fresco
+    implementation  'com.facebook.fresco:fresco:2.2.0'
 
 }
