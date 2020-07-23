@@ -82,6 +82,10 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
     //测试Fresco
-    implementation  'com.facebook.fresco:fresco:2.2.0'
+    implementation 'com.facebook.fresco:fresco:2.2.0'
+    //测试Eventbus
+    implementation 'org.greenrobot:eventbus:3.2.0'
+    implementation project(path: ':mvplibrary')
+
 
 }

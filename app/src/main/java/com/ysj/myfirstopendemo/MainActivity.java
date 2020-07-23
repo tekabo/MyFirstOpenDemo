@@ -1,12 +1,16 @@
 package com.ysj.myfirstopendemo;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,14 +47,38 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     @BindView(R.id.tv_test)
     TextView tvTest;
+    @BindView(R.id.tv_handler)
+    TextView tvHandler;
+
+    @BindView(R.id.pb_test_AsyncTask)
+    ProgressBar pbTestAsyncTask;
+    @BindView(R.id.tv_test_AsyncTask)
+    TextView tvTestAsyncTask;
+    private MyProgressAsyncTask myProgressAsyncTask;
+
+
     private Observable observable;
     private Observer observer;
+
+    private Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            switch (msg.what) {
+                case 7:
+                    tvHandler.setText("收到子线程消息，更改文本");
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
         //当Lifecycle的生命周期发生变化时，MyObserver就会观察到，或者说是感知到。MyObserver成为了一个Lifecycle的观察者
         getLifecycle().addObserver(new MyObserver());
 
@@ -59,7 +87,8 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick({R.id.test_dialog_library, R.id.test_merge_library, R.id.test_lifecycle, R.id.test_call, R.id.refresh_list,
             R.id.test_okhttp, R.id.test_retrofit, R.id.test_litepal, R.id.test_greendao, R.id.test_Dagger,
-            R.id.test_title_slide, R.id.test_search_slide, R.id.test_rxjava,R.id.test_xutils,R.id.tv_glide})
+            R.id.test_title_slide, R.id.test_search_slide, R.id.test_rxjava, R.id.test_xutils,
+            R.id.tv_glide, R.id.bt_handler,R.id.btn_test_AsyncTask,R.id.btn_test_eventbus})
     public void onMyClickView(View view) {
         switch (view.getId()) {
             case R.id.test_dialog_library:
@@ -119,13 +148,36 @@ public class MainActivity extends AppCompatActivity {
             case R.id.tv_glide:
                 GlideAndFrescoTestActivity.startMyActivity(MainActivity.this);
                 break;
+            case R.id.bt_handler:
+                //发送消息
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Message message = Message.obtain();
+                        message.what = 7;
+                        mHandler.sendMessage(message);
+                    }
+                }).start();
+                break;
+            case R.id.btn_test_AsyncTask:
+                myProgressAsyncTask = new MyProgressAsyncTask(pbTestAsyncTask,tvTestAsyncTask);
+                myProgressAsyncTask.execute();
+                break;
+            case R.id.btn_test_eventbus:
+                //声明订阅者——Subscriber
+                EvtBusPublisherActivity.startMyActivity(MainActivity.this);
+                break;
         }
     }
 
+    public static void startMyActivity(Context context) {
+        Intent intent = new Intent(context, MainActivity.class);
+        context.startActivity(intent);
+    }
     private void myRxJava() {
         //1.创建被观察者
         observable = Observable.create(new ObservableOnSubscribe<String>() {
-        //2.实现回调方法subcribe()
+            //2.实现回调方法subcribe()
             @Override
             public void subscribe(@io.reactivex.rxjava3.annotations.NonNull ObservableEmitter<String> emitter) throws Throwable {
                 //3.发送String类型消息
@@ -142,11 +194,12 @@ public class MainActivity extends AppCompatActivity {
             public void onSubscribe(@io.reactivex.rxjava3.annotations.NonNull Disposable d) {
 
             }
+
             //7.当被观察者执行onNext()的回调
             @Override
             public void onNext(@io.reactivex.rxjava3.annotations.NonNull String s) {
                 tvTest.setText(s);
-                Log.i(TAG,"收到消息啦");
+                Log.i(TAG, "收到消息啦");
             }
 
             //8.当被观察者执行onError()的回调
@@ -158,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
             //9.当被观察者执行onComplete()的回调
             @Override
             public void onComplete() {
-                Log.i(TAG,"消息接收已结束！");
+                Log.i(TAG, "消息接收已结束！");
             }
         };
 
@@ -244,11 +297,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.e(TAG, "onStart");
-    }
+
 
     @Override
     protected void onResume() {
@@ -261,4 +310,15 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         Log.e(TAG, "onPause");
     }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //关闭AsyncTask,防止内存泄漏
+        myProgressAsyncTask.cancel(true);
+
+    }
+
+
 }
