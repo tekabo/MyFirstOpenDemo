@@ -25,6 +25,7 @@ import com.ysj.dialoglibrary.ProtocolDialog;
 import com.ysj.dialoglibrary.WebUrlActivity;
 import com.ysj.listrefreshlibrary.RefreshActivity;
 import com.ysj.mergeadapterlibrary.TestMergeActivity;
+import com.ysj.pageslide.Imageandtabslide.ImgAndTabSlideActivity;
 import com.ysj.pageslide.searchboxslide.SearchBoxSlideActivity;
 import com.ysj.pageslide.titleslide.TitleSildeTestActivity;
 
@@ -87,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick({R.id.test_dialog_library, R.id.test_merge_library, R.id.test_lifecycle, R.id.test_call, R.id.refresh_list,
             R.id.test_okhttp, R.id.test_retrofit, R.id.test_litepal, R.id.test_greendao, R.id.test_Dagger,
-            R.id.test_title_slide, R.id.test_search_slide, R.id.test_rxjava, R.id.test_xutils,
+            R.id.test_title_slide, R.id.test_search_slide,R.id.test_tab, R.id.test_rxjava, R.id.test_xutils,
             R.id.tv_glide, R.id.bt_handler,R.id.btn_test_AsyncTask,R.id.btn_test_eventbus})
     public void onMyClickView(View view) {
         switch (view.getId()) {
@@ -138,6 +139,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.test_search_slide:
                 SearchBoxSlideActivity.startMyActivity(MainActivity.this);
+                break;
+            case R.id.test_tab:
+                ImgAndTabSlideActivity.startMyActivity(MainActivity.this);
                 break;
             case R.id.test_xutils:
                 TestXutilsActivity.startMyActivity(MainActivity.this);

@@ -9,6 +9,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -92,6 +93,12 @@
                 android:text="测试Dagger" />
 
             <Button
+                android:id="@+id/test_tab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="tab-up滑动" />
+            <Button
                 android:id="@+id/test_title_slide"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -104,69 +111,76 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="搜索框滑动" />
+
             <Button
                 android:id="@+id/test_xutils"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="测试xUtils" />
+
             <Button
                 android:id="@+id/test_rxjava"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="测试rxjava-开始订阅" />
+
             <TextView
                 android:id="@+id/tv_test"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="测试文本"
-                android:textSize="30sp"/>
+                android:textSize="30sp" />
+
             <Button
                 android:id="@+id/tv_glide"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="测试glide"
-                android:textSize="30sp"/>
+                android:textSize="30sp" />
+
             <Button
                 android:id="@+id/bt_handler"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="测试handler发消息"
-                android:textSize="30sp"/>
+                android:textSize="30sp" />
+
             <TextView
                 android:id="@+id/tv_handler"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="接收handler发的消息"
-                android:textSize="30sp"/>
+                android:textSize="30sp" />
             <!--测试AsyncTask-->
             <ProgressBar
                 android:id="@+id/pb_test_AsyncTask"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                 android:max="100"
-                android:progress="0"/>
+                android:progress="0" />
 
             <Button
                 android:id="@+id/btn_test_AsyncTask"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="AsyncTask启动进度条"/>
+                android:text="AsyncTask启动进度条" />
 
             <TextView
                 android:id="@+id/tv_test_AsyncTask"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="32sp"
                 android:gravity="center"
-                android:text="AsyncTask进度值"/>
+                android:text="AsyncTask进度值"
+                android:textSize="32sp" />
+
             <Button
                 android:id="@+id/btn_test_eventbus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="测试eventbus"/>
+                android:text="测试eventbus" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
