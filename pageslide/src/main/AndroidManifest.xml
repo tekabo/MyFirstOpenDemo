@@ -3,7 +3,6 @@
     package="com.ysj.pageslide">
 
     <application>
-        <activity android:name=".Imageandtabslide.ImgAndTabSlideActivity"></activity>
         <activity android:name=".searchboxslide.SearchBoxSlideActivity" />
         <activity android:name=".titleslide.TitleSildeTestActivity" />
     </application>

@@ -181,6 +181,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="测试eventbus" />
+            <Button
+                android:id="@+id/btn_pie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="饼图" />
+            <Button
+                android:id="@+id/btn_canvas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="线点矩形等"/>
+            <Button
+                android:id="@+id/btn_opera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="移缩转切"/>
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

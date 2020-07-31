@@ -18,7 +18,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".EvtBusSubcriberActivity"></activity>
+        <activity android:name=".selfview.OperCanvasActivity"></activity>
+        <activity android:name=".selfview.MeCanvasActivity" />
+        <activity android:name=".selfview.MyselfPieActivity" />
+        <activity android:name=".EvtBusSubcriberActivity" />
         <activity android:name=".EvtBusPublisherActivity" />
         <activity android:name=".GlideAndFrescoTestActivity" />
         <activity android:name=".TestXutilsActivity" />
