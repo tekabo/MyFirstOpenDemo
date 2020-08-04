@@ -1,2 +1,2 @@
-include ':app', ':tkbtoastlibrary', ':dialoglibrary', ':mergeadapterlibrary', ':listrefreshlibrary', ':pageslide', ':mvplibrary', ':pictureselector'
+include ':app', ':tkbtoastlibrary', ':dialoglibrary', ':mergeadapterlibrary', ':listrefreshlibrary', ':pageslide', ':mvplibrary', ':pictureselector', ':mpandroidchart'
 rootProject.name='MyFirstOpenDemo'

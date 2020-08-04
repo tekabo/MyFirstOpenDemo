@@ -196,6 +196,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="移缩转切"/>
+            <Button
+                android:id="@+id/btn_chart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="图标库"/>
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

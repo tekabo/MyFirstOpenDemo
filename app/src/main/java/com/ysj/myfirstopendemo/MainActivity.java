@@ -25,6 +25,7 @@ import com.ysj.dialoglibrary.ProtocolDialog;
 import com.ysj.dialoglibrary.WebUrlActivity;
 import com.ysj.listrefreshlibrary.RefreshActivity;
 import com.ysj.mergeadapterlibrary.TestMergeActivity;
+import com.ysj.mpandroidchart.barchart.BarChartActivity;
 import com.ysj.myfirstopendemo.selfview.MeCanvasActivity;
 import com.ysj.myfirstopendemo.selfview.MyselfPieActivity;
 import com.ysj.myfirstopendemo.selfview.OperCanvasActivity;
@@ -92,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             R.id.test_okhttp, R.id.test_retrofit, R.id.test_litepal, R.id.test_greendao, R.id.test_Dagger,
             R.id.test_title_slide, R.id.test_search_slide,R.id.test_tab, R.id.test_rxjava, R.id.test_xutils,
             R.id.tv_glide, R.id.bt_handler,R.id.btn_test_AsyncTask,R.id.btn_test_eventbus,R.id.btn_pie,
-            R.id.btn_canvas,R.id.btn_opera})
+            R.id.btn_canvas,R.id.btn_opera,R.id.btn_chart})
     public void onMyClickView(View view) {
         switch (view.getId()) {
             case R.id.test_dialog_library:
@@ -184,6 +185,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_opera:
                 Intent intent2 = new Intent(this, OperCanvasActivity.class);
                 startActivity(intent2);
+                break;
+            case R.id.btn_chart:
+                BarChartActivity.startActivity(MainActivity.this);
                 break;
         }
     }
