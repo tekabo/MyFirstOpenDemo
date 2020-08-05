@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".barchart.BarChartActivity">
-    <com.github.mikephil.charting.charts.BarChart
-        android:id="@+id/chart1"
+    tools:context=".barchart.HorizontalBarActivity">
+    <com.github.mikephil.charting.charts.HorizontalBarChart
+        android:id="@+id/my_horizontal_bar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="50dp"

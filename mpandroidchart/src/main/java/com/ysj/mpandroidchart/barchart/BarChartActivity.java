@@ -23,9 +23,9 @@ import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.ysj.mpandroidchart.R;
 
 import java.util.ArrayList;
-
-public class BarChartActivity extends AppCompatActivity implements
-        OnChartValueSelectedListener {
+//implements
+//        OnChartValueSelectedListener
+public class BarChartActivity extends AppCompatActivity  {
     private BarChart mBarChart;
 
     public static void startActivity(Context context) {
@@ -46,7 +46,7 @@ public class BarChartActivity extends AppCompatActivity implements
      * 初始化柱形图控件属性
      */
     private void initBarChart() {
-        mBarChart.setOnChartValueSelectedListener(this);
+        //mBarChart.setOnChartValueSelectedListener(this);
         mBarChart.setDrawBarShadow(false);
         mBarChart.setDrawValueAboveBar(true);
         mBarChart.getDescription().setEnabled(false);
@@ -113,15 +113,15 @@ public class BarChartActivity extends AppCompatActivity implements
     }
 
 
-    @Override
-    public void onValueSelected(Entry e, Highlight h) {
-
-    }
-
-    @Override
-    public void onNothingSelected() {
-
-    }
+//    @Override
+//    public void onValueSelected(Entry e, Highlight h) {
+//
+//    }
+//
+//    @Override
+//    public void onNothingSelected() {
+//
+//    }
 
     private void setBarChartData() {
 

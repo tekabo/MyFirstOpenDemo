@@ -197,10 +197,20 @@
                 android:layout_height="wrap_content"
                 android:text="移缩转切"/>
             <Button
-                android:id="@+id/btn_chart"
+                android:id="@+id/bar_chart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="图标库"/>
+                android:text="柱形图"/>
+            <Button
+                android:id="@+id/horizontal_bar_chart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="水平柱形图"/>
+            <Button
+                android:id="@+id/line_chart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="折线图"/>
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
