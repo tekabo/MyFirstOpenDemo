@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".linechart.TwoLinesChartActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/two_lines_chart">
+        <View
+            android:id="@+id/view_event"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/shape_round_blue"
+           />
+        <TextView
+            android:id="@+id/tv_event"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/view_event"
+            android:layout_marginLeft="8dp"
+            android:text="事件"
+            android:textSize="12sp"/>
+
+        <View
+            android:id="@+id/view_over"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/tv_event"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/shape_round_green"
+            />
+        <TextView
+            android:id="@+id/tv_over"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/view_over"
+            android:layout_marginLeft="8dp"
+            android:text="办结"
+            android:layout_alignParentBottom="true"
+            android:textSize="12sp"/>
+    </RelativeLayout>
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/two_lines_chart"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

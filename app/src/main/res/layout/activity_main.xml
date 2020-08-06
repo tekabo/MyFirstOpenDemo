@@ -211,6 +211,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="折线图"/>
+            <Button
+                android:id="@+id/two_line_chart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="双折线图"/>
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
