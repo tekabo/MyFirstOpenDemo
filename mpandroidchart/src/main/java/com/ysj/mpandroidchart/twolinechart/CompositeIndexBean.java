@@ -1,4 +1,4 @@
-package com.ysj.mpandroidchart.linechart;
+package com.ysj.mpandroidchart.twolinechart;
 
 /**
  * Created by tekabo

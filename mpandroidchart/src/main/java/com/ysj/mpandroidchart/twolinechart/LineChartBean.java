@@ -1,4 +1,4 @@
-package com.ysj.mpandroidchart.linechart;
+package com.ysj.mpandroidchart.twolinechart;
 
 import java.util.List;
 
@@ -57,8 +57,9 @@ public class LineChartBean {
         }
 
         public class ResultBean {
+
+            private List<CompositeIndexBean> compositeIndexGEM;
             private List<IncomeBeans> incomeBeans;
-            private List<CompositeIndexBean> compositeIndex1;
             public List<IncomeBeans> getIncomeBeans() {
                 return incomeBeans;
             }
@@ -68,11 +69,11 @@ public class LineChartBean {
             }
 
             public List<CompositeIndexBean> getCompositeIndex1() {
-                return compositeIndex1;
+                return compositeIndexGEM;
             }
 
             public void setCompositeIndex1(List<CompositeIndexBean> compositeIndex1) {
-                this.compositeIndex1 = compositeIndex1;
+                this.compositeIndexGEM = compositeIndex1;
             }
         }
 

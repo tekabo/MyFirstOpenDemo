@@ -3,7 +3,7 @@
     package="com.ysj.mpandroidchart">
 
     <application>
-        <activity android:name=".linechart.TwoLinesChartActivity"></activity>
+        <activity android:name=".twolinechart.TwoLinesChartActivity"></activity>
         <activity android:name=".piechart.PieChartActivity" />
         <activity android:name=".linechart.LineChartActivity" />
         <activity android:name=".barchart.HorizontalBarActivity" />

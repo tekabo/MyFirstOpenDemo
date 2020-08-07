@@ -1,4 +1,4 @@
-package com.ysj.mpandroidchart.linechart;
+package com.ysj.mpandroidchart.twolinechart;
 
 import android.content.Context;
 import android.content.res.AssetManager;

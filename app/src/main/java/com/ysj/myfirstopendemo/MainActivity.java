@@ -28,7 +28,7 @@ import com.ysj.mergeadapterlibrary.TestMergeActivity;
 import com.ysj.mpandroidchart.barchart.BarChartActivity;
 import com.ysj.mpandroidchart.barchart.HorizontalBarActivity;
 import com.ysj.mpandroidchart.linechart.LineChartActivity;
-import com.ysj.mpandroidchart.linechart.TwoLinesChartActivity;
+import com.ysj.mpandroidchart.twolinechart.TwoLinesChartActivity;
 import com.ysj.myfirstopendemo.selfview.MeCanvasActivity;
 import com.ysj.myfirstopendemo.selfview.MyselfPieActivity;
 import com.ysj.myfirstopendemo.selfview.OperCanvasActivity;
