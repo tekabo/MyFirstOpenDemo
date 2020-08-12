@@ -31,8 +31,9 @@ public class TwoLinesChartActivity extends AppCompatActivity {
         lineChart1 = findViewById(R.id.two_lines_chart);
         lineChartManager1 = new LineChartManager(lineChart1);
         //展示图表
-        lineChartManager1.showLineChart(compositeIndexBeans, "事件", getResources().getColor(R.color.blue));
-        lineChartManager1.addLine(incomeBeans, "办结", getResources().getColor(R.color.green));
+        lineChartManager1.showLineChart(compositeIndexBeans, "事件" ,getResources().getColor(R.color.green));
+       //  lineChartManager1.addLine(incomeBeans, "办结", getResources().getColor(R.color.green));
+       // lineChartManager1.addLine(incomeBeans, "办结", R.drawable.fade_green);
         lineChartManager1.setMarkerView(this);
 
         //设置曲线填充色 以及 MarkerView

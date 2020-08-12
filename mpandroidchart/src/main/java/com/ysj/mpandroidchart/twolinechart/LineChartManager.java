@@ -57,7 +57,8 @@ public class LineChartManager {
         /***图表设置***/
         //是否展示网格线
         lineChart.setDrawGridBackground(false);
-        lineChart.setBackgroundColor(Color.WHITE);
+        //lineChart.setBackgroundColor(Color.WHITE);
+
         //是否显示边界
         lineChart.setDrawBorders(false);
         lineChart.setDoubleTapToZoomEnabled(false);
@@ -129,11 +130,8 @@ public class LineChartManager {
         lineDataSet.setCircleColor(color);
         lineDataSet.setLineWidth(0.5f);
         lineDataSet.setCircleRadius(3f);
-        //设置折线填充颜色
-        lineDataSet.setDrawFilled(true);
-        lineDataSet.setFillColor(color);
 
-        lineDataSet.setDrawCircles(true);
+        lineDataSet.setDrawCircles(false);
         lineDataSet.setDrawValues(false);
         //设置曲线值的圆点是实心还是空心
         lineDataSet.setDrawCircleHole(true);
@@ -373,6 +371,12 @@ public class LineChartManager {
         LineDataSet lineDataSet = new LineDataSet(entries, name);
         //LINEAR 折线图  CUBIC_BEZIER 圆滑曲线
         initLineDataSet(lineDataSet, color, LineDataSet.Mode.LINEAR);
+        //设置折线填充颜色
+        lineDataSet.setDrawFilled(true);
+        lineDataSet.setFillColor(R.drawable.fade_blue);
+        //设置折线填充颜色
+//        lineDataSet.setDrawFilled(true);
+//        lineDataSet.setFillColor(color);
 
         //线条自定义内容 放在这里
 //        lineDataSet.setValueFormatter(new IValueFormatter() {
@@ -401,6 +405,10 @@ public class LineChartManager {
         LineDataSet lineDataSet = new LineDataSet(entries, name);
 
         initLineDataSet(lineDataSet, color, LineDataSet.Mode.LINEAR);
+        //设置折线填充颜色
+        lineDataSet.setDrawFilled(true);
+        lineDataSet.setFillColor(color);
+
         lineChart.getLineData().addDataSet(lineDataSet);
         lineChart.invalidate();
     }
