@@ -4,8 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".selfview.OperCanvasActivity">
     <com.ysj.myfirstopendemo.selfview.OperCanvasView
         android:layout_width="match_parent"
         android:layout_height="100dp"/>
+    <com.ysj.myfirstopendemo.selfview.OperPicTxtCanvasView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        />
 </LinearLayout>

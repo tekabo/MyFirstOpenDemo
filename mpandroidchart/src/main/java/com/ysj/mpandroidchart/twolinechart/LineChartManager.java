@@ -125,7 +125,7 @@ public class LineChartManager {
      * @param color       线条颜色
      * @param mode
      */
-    private void initLineDataSet(LineDataSet lineDataSet, int color, LineDataSet.Mode mode) {
+    private void initLineDataSet(LineDataSet lineDataSet, int color, LineDataSet.Mode mode,int type) {
         lineDataSet.setColor(color);
         lineDataSet.setCircleColor(color);
         lineDataSet.setLineWidth(0.5f);
@@ -133,9 +133,18 @@ public class LineChartManager {
 
         lineDataSet.setDrawCircles(false);
         lineDataSet.setDrawValues(false);
-        //设置曲线值的圆点是实心还是空心
-        lineDataSet.setDrawCircleHole(true);
-        lineDataSet.setValueTextSize(10f);
+        lineDataSet.setDrawFilled(true);
+        if(type==2){
+            //设置折线填充颜色
+            lineDataSet.setFillDrawable(lineChart.getContext().getDrawable(R.drawable.fade_green));
+           // lineDataSet.setFillColor(R.drawable.fade_green);
+        }else {
+            lineDataSet.setFillDrawable(lineChart.getContext().getDrawable(R.drawable.fade_blue));
+        }
+
+        //设置折线填充颜色
+//        lineDataSet.setDrawFilled(true);
+//        lineDataSet.setFillColor(color);
 
         lineDataSet.setFormLineWidth(1f);
         lineDataSet.setFormSize(15.f);
@@ -370,14 +379,11 @@ public class LineChartManager {
         // 每一个LineDataSet代表一条线
         LineDataSet lineDataSet = new LineDataSet(entries, name);
         //LINEAR 折线图  CUBIC_BEZIER 圆滑曲线
-        initLineDataSet(lineDataSet, color, LineDataSet.Mode.LINEAR);
-        //设置折线填充颜色
-        lineDataSet.setDrawFilled(true);
-        lineDataSet.setFillColor(R.drawable.fade_blue);
+        initLineDataSet(lineDataSet, color, LineDataSet.Mode.LINEAR,1);
         //设置折线填充颜色
 //        lineDataSet.setDrawFilled(true);
-//        lineDataSet.setFillColor(color);
-
+//        //lineDataSet.setFillColor(R.drawable.fade_blue);
+//        lineDataSet.setFillDrawable(lineChart.getContext().getDrawable(R.drawable.fade_blue));
         //线条自定义内容 放在这里
 //        lineDataSet.setValueFormatter(new IValueFormatter() {
 //            @Override
@@ -389,6 +395,7 @@ public class LineChartManager {
 
         LineData lineData = new LineData(lineDataSet);
         lineChart.setData(lineData);
+        lineChart.invalidate();
     }
 
     /**
@@ -404,10 +411,8 @@ public class LineChartManager {
         // 每一个LineDataSet代表一条线
         LineDataSet lineDataSet = new LineDataSet(entries, name);
 
-        initLineDataSet(lineDataSet, color, LineDataSet.Mode.LINEAR);
-        //设置折线填充颜色
-        lineDataSet.setDrawFilled(true);
-        lineDataSet.setFillColor(color);
+        initLineDataSet(lineDataSet, color, LineDataSet.Mode.LINEAR,2);
+
 
         lineChart.getLineData().addDataSet(lineDataSet);
         lineChart.invalidate();
